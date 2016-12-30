@@ -11,7 +11,3 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 # Middleman Gems
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
-
-gem 'rails-assets-vue', source: 'https://rails-assets.org'
-gem 'jquery-middleman'
-gem 'bootstrap-sass'
