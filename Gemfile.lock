@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -96,6 +97,7 @@ GEM
     rack (2.0.1)
     rack-livereload (0.3.16)
       rack
+    rails-assets-vue (1.0.28)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -117,6 +119,7 @@ DEPENDENCIES
   jquery-middleman
   middleman (>= 4.0.0)
   middleman-livereload
+  rails-assets-vue!
   tzinfo-data
   wdm (~> 0.1.0)
 
