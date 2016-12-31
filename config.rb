@@ -22,7 +22,7 @@ page '/*.txt', layout: false
 activate :external_pipeline,
   name:    :bower,
   command: 'npm install && bower install && gulp server',
-  source:  'tmp'
+  source:  'tmp/bower_components'
 
 # Reload the browser automatically whenever files change
 configure :development do
