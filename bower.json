@@ -1,0 +1,8 @@
+{
+  "name": "ekispert_js",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "vue": "^2.1.8"
+  }
+}
