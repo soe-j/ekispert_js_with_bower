@@ -38,7 +38,9 @@ helpers do
 
   # loading in templates
   def bower_components
-    ['jquery', 'vue']
+    Dir.entries('./tmp/bower_components/javascripts').reject do |n|
+      n.start_with? '.'
+    end
   end
 
 end
