@@ -9,7 +9,8 @@
     <title><%= current_page.data.title || "Middleman" %></title>
 
     <%= stylesheet_link_tag :site %>
-    <%= javascript_include_tag ['jquery', 'vue', page_classes] %>
+    <%= javascript_include_tag bower_components %>
+    <%= javascript_include_tag page_classes %>
   </head>
 
   <body class="<%= page_classes %>">

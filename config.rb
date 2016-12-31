@@ -34,11 +34,14 @@ end
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+
+  # loading in templates
+  def bower_components
+    ['jquery', 'vue']
+  end
+
+end
 
 # Build-specific configuration
 configure :build do
