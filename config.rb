@@ -35,19 +35,10 @@ helpers do
 
   # loading in templates
   def bower_javascripts_include_tag
-    js_paths = []
-    Dir.glob('./tmp/bower_components/*') do |components_dirpath|
-      dirname = File.basename(components_dirpath)
-      Dir.glob("./tmp/bower_components/#{dirname}/*.js") do |components_filepath|
-        filename = File.basename(components_filepath)
-        js_paths << "#{dirname}/#{filename}"
-      end
-    end
-    js_paths.map do |path|
-      content_tag :script, nil, {src: "/bower_components/#{path}"}
+    Dir.glob('./tmp/bower_components/**/*.js').map do |path|
+      content_tag :script, nil, {src: path[5..-1]}
     end.join
   end
-
 end
 
 # Build-specific configuration
