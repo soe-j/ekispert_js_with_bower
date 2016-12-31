@@ -20,3 +20,6 @@
 # Ignore javascript components
 /node_modules
 /bower_components
+
+# Ignore some tmp file
+/tmp
