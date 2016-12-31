@@ -18,6 +18,12 @@ page '/*.txt', layout: false
 
 # General configuration
 
+# bower (manage javascript library) install directory
+activate :external_pipeline,
+  name:    :bower,
+  command: 'npm install && bower install && gulp server',
+  source:  'tmp'
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
