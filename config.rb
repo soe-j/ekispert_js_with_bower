@@ -34,8 +34,16 @@ end
 helpers do
 
   # loading in templates
-  def bower_javascripts_include_tag
-    Dir.glob('./tmp/bower_components/**/*.js').map do |path|
+  def bower_javascripts_include_tag options={}
+    paths = Dir.glob('./tmp/bower_components/**/*.js')
+    if options[:priorities]
+      options[:priorities].reverse.each do |priority_js|
+        paths.sort_by! do |path|
+          path.include?("#{priority_js}.js") ? 0 : 1
+        end
+      end
+    end
+    paths.map do |path|
       content_tag :script, nil, {src: path[5..-1]}
     end.join
   end
