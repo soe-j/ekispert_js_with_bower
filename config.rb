@@ -18,12 +18,10 @@ page '/*.txt', layout: false
 
 # General configuration
 
-# bower (manage javascript library) install directory
-import_path File.expand_path('tmp/bower_components', app.root)
-
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  activate :bower
 end
 
 ###
@@ -31,23 +29,11 @@ end
 ###
 
 # Methods defined in the helpers block are available in templates
-helpers do
-
-  # loading in templates
-  def bower_javascripts_include_tag options={}
-    paths = Dir.glob('./tmp/bower_components/**/*.js')
-    if options[:priorities]
-      options[:priorities].reverse.each do |priority_js|
-        paths.sort_by! do |path|
-          path.include?("#{priority_js}.js") ? 0 : 1
-        end
-      end
-    end
-    paths.map do |path|
-      content_tag :script, nil, {src: path[5..-1]}
-    end.join
-  end
-end
+# helpers do
+#   def some_helper
+#     "Helping"
+#   end
+# end
 
 # Build-specific configuration
 configure :build do
